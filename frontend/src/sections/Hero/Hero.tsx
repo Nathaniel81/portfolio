@@ -1,8 +1,8 @@
-import styles from './HeroStyles.module.css';
-import heroImg from '../../assets/Design uten navn.png';
 import { useTheme } from '@/context/ThemeContext';
-import { IoSunny, IoMoon } from "react-icons/io5";
-import { FaXTwitter, FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { IoMoon, IoSunny } from "react-icons/io5";
+import heroImg from '../../assets/Design uten navn.png';
+import styles from './HeroStyles.module.scss';
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
