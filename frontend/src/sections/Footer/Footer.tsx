@@ -1,9 +1,14 @@
-import React from 'react'
+import styles from './FooterStyles.module.scss';
 
-const Footer = () => {
+function Footer() {
   return (
-	<div>Footer</div>
-  )
+    <section id="footer" className={styles.container}>
+      <p>
+        &copy; 2024 Nathaniel Demissie. <br />
+        All rights reserved.
+      </p>
+    </section>
+  );
 }
 
-export default Footer
+export default Footer;
