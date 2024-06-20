@@ -24,7 +24,8 @@ class Project(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='projects')
     title = models.CharField(max_length=100)
     description = models.TextField()
-    link = models.URLField()
+    github_repo = models.URLField(blank=True)
+    website = models.URLField(blank=True)
     image = CloudinaryField('image', null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
