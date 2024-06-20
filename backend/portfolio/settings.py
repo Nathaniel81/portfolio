@@ -35,12 +35,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['portfolioapi-fmq9.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
-    "https://main--nathanieldemissie.netlify.app/",
+    "https://main--nathanieldemissie.netlify.app",
+    "https://nathanieldemissie.onrender.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
