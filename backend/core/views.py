@@ -12,7 +12,7 @@ from .serializers import (
 
 
 class UserProfileViewSet(viewsets.ModelViewSet):
-    queryset = UserProfile.objects.select_related('projects', 'skills').all()
+    queryset = UserProfile.objects.prefetch_related('user').all()
     serializer_class = UserProfileSerializer
 
 class ProjectViewSet(viewsets.ModelViewSet):

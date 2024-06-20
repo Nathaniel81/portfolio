@@ -14,27 +14,28 @@ class ProjectSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Project
-        fields = ['id', 'title', 'description', 'link', 'image']
+        fields = ['id', 'title', 'description', 'github_repo', 'website', 'image']
 
     def get_image(self, obj):
-        return cloudinary_url(obj.image.public_id)[0]
+        return cloudinary_url(obj.image.public_id, secure=True)[0]
 
 class UserProfileSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     profile_picture = serializers.SerializerMethodField()
     cv = serializers.SerializerMethodField()
     projects = ProjectSerializer(many=True, read_only=True)
-
-
     class Meta:
         model = UserProfile
         fields = ['user', 'projects', 'bio', 'profile_picture', 'linkedin', 'github', 'twitter', 'cv']
 
     def get_profile_picture(self, obj):
-        return cloudinary_url(obj.profile_picture.public_id)[0]
+        return cloudinary_url(obj.profile_picture.public_id, secure=True)[0]
 
     def get_cv(self, obj):
-        return cloudinary_url(obj.cv.public_id)[0]
+        if obj.cv:
+            url, options = cloudinary_url(obj.cv.public_id, resource_type="image", flags="attachment", secure=True)
+            return url
+        return None
 
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
