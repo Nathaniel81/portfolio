@@ -1,17 +1,22 @@
 import { useTheme } from '@/context/ThemeContext';
+import { useUser } from '@/context/UserProfileContext';
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { IoMoon, IoSunny } from "react-icons/io5";
-import heroImg from '../../assets/Design uten navn.png';
 import styles from './HeroStyles.module.scss';
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
+  const { profile } = useUser();
+  // const cvUrl = profile?.cv ? `${profile.cv}/fl_attachment` : '';
+  // const url = "http://res.cloudinary.com/dqm9mc5da/image/upload/fl_attachment/drcgiqikm3k7gaxdde6c";
+
+
 
   return (
     <section id="hero" className={styles.container}>
       <div className={styles.colorModeContainer}>
         <img
-          src={heroImg}
+          src={profile?.profile_picture}
           className={styles.hero}
           alt="Profile picture of Nate"
         />
@@ -34,32 +39,35 @@ function Hero() {
       </div>
       <div className={styles.info}>
         <h1>
-          Nathaniel
+          {profile?.user?.first_name}
           <br />
-          Demissie
+          {profile?.user?.last_name}
         </h1>
         <h2>Web Developer</h2>
         <span className={styles.socialIcons}>
-          <FaXTwitter 
-            color={theme === 'dark' ? 'white' : 'black'} 
-            size={20} 
-            aria-label="Twitter"
-          />
-          <FaGithub 
-            color={theme === 'dark' ? 'white' : 'black'} 
-            size={20} 
-            aria-label="Github"
-          />
-          <FaLinkedin 
-            color={theme === 'dark' ? 'white' : 'black'} 
-            size={20} 
-            aria-label="LinkedIn"
-          />
+          <a href={profile?.twitter} aria-label="Twitter">
+            <FaXTwitter 
+              color={theme === 'dark' ? 'white' : 'black'} 
+              size={20} 
+            />
+          </a>
+          <a href={profile?.github} aria-label="Github">
+            <FaGithub 
+              color={theme === 'dark' ? 'white' : 'black'} 
+              size={20} 
+            />
+          </a>
+          <a href={profile?.linkedin} aria-label="LinkedIn">
+            <FaLinkedin 
+              color={theme === 'dark' ? 'white' : 'black'} 
+              size={20} 
+            />
+          </a>
         </span>
         <p className={styles.description}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          {profile?.bio}
         </p>
-        <a href="/resume" download>
+        <a href={profile?.cv} download>
           <button className="hover">Resume</button>
         </a>
       </div>
