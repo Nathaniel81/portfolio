@@ -7,10 +7,6 @@ import styles from './HeroStyles.module.scss';
 function Hero() {
   const { theme, toggleTheme } = useTheme();
   const { profile } = useUser();
-  // const cvUrl = profile?.cv ? `${profile.cv}/fl_attachment` : '';
-  // const url = "http://res.cloudinary.com/dqm9mc5da/image/upload/fl_attachment/drcgiqikm3k7gaxdde6c";
-
-
 
   return (
     <section id="hero" className={styles.container}>
