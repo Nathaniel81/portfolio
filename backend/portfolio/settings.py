@@ -40,7 +40,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['portfolioapi-fmq9.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "https://main--nathanieldemissie.netlify.app/",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
