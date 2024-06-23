@@ -18,6 +18,7 @@ export interface UserProfile {
   bio: string;
   profile_picture: string;
   linkedin: string;
+  discord: string;
   github: string;
   twitter: string;
   cv: string;

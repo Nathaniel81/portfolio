@@ -1,12 +1,13 @@
 import { useTheme } from '@/context/ThemeContext';
 import { useUser } from '@/context/UserProfileContext';
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa6";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import styles from './HeroStyles.module.scss';
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
   const { profile } = useUser();
+  const ROLE = 'Web Developer';
 
   return (
     <section id="hero" className={styles.container}>
@@ -39,10 +40,10 @@ function Hero() {
           <br />
           {profile?.user?.last_name}
         </h1>
-        <h2>Web Developer</h2>
+        <h2>{ROLE}</h2>
         <span className={styles.socialIcons}>
-          <a href={profile?.twitter} aria-label="Twitter">
-            <FaXTwitter 
+          <a href={profile?.discord} aria-label="Twitter">
+            <FaDiscord 
               color={theme === 'dark' ? 'white' : 'black'} 
               size={20} 
             />

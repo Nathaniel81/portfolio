@@ -25,7 +25,7 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     github_repo = models.URLField(blank=True)
-    website = models.URLField(blank=True)
+    discord = models.URLField(blank=True)
     image = CloudinaryField('image', null=True, blank=True)
     is_active = models.BooleanField(default=True)
 

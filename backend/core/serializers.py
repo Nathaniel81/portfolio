@@ -26,7 +26,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     projects = ProjectSerializer(many=True, read_only=True)
     class Meta:
         model = UserProfile
-        fields = ['user', 'projects', 'bio', 'profile_picture', 'linkedin', 'github', 'twitter', 'cv']
+        fields = ['user', 'projects', 'bio', 'profile_picture', 'linkedin', 'discord', 'github', 'twitter', 'cv']
 
     def get_profile_picture(self, obj):
         return cloudinary_url(obj.profile_picture.public_id, secure=True)[0]
