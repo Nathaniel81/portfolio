@@ -8,7 +8,7 @@ class UserProfile(models.Model):
     bio = models.TextField(blank=True)
     profile_picture =  CloudinaryField('image', null=True, blank=True)
     cv = CloudinaryField('file', null=True, blank=True)
-    website = models.URLField(blank=True)
+    discord = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
     github = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
@@ -24,8 +24,8 @@ class Project(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='projects')
     title = models.CharField(max_length=100)
     description = models.TextField()
+    website = models.URLField(blank=True)
     github_repo = models.URLField(blank=True)
-    discord = models.URLField(blank=True)
     image = CloudinaryField('image', null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
