@@ -13,9 +13,9 @@ function Hero() {
     <section id="hero" className={styles.container}>
       <div className={styles.colorModeContainer}>
         <img
-          src={profile?.profile_picture}
+          src={profile?.profile_picture || 'default_profile_picture_url'} // Provide a default image URL
           className={styles.hero}
-          alt="Profile picture of Nate"
+          alt={`Profile picture of ${profile?.user?.first_name || 'User'}`}
         />
         {theme === 'dark' ? (
           <IoSunny 
@@ -42,31 +42,39 @@ function Hero() {
         </h1>
         <h2>{ROLE}</h2>
         <span className={styles.socialIcons}>
-          <a href={profile?.discord} aria-label="Twitter">
-            <FaDiscord 
-              color={theme === 'dark' ? 'white' : 'black'} 
-              size={20} 
-            />
-          </a>
-          <a href={profile?.github} aria-label="Github">
-            <FaGithub 
-              color={theme === 'dark' ? 'white' : 'black'} 
-              size={20} 
-            />
-          </a>
-          <a href={profile?.linkedin} aria-label="LinkedIn">
-            <FaLinkedin 
-              color={theme === 'dark' ? 'white' : 'black'} 
-              size={20} 
-            />
-          </a>
+          {profile?.discord && (
+            <a href={profile.discord} aria-label="Discord">
+              <FaDiscord 
+                color={theme === 'dark' ? 'white' : 'black'} 
+                size={20} 
+              />
+            </a>
+          )}
+          {profile?.github && (
+            <a href={profile.github} aria-label="Github">
+              <FaGithub 
+                color={theme === 'dark' ? 'white' : 'black'} 
+                size={20} 
+              />
+            </a>
+          )}
+          {profile?.linkedin && (
+            <a href={profile.linkedin} aria-label="LinkedIn">
+              <FaLinkedin 
+                color={theme === 'dark' ? 'white' : 'black'} 
+                size={20} 
+              />
+            </a>
+          )}
         </span>
         <p className={styles.description}>
           {profile?.bio}
         </p>
-        <a href={profile?.cv} download>
-          <button className="hover">Resume</button>
-        </a>
+        {profile?.cv && (
+          <a href={profile.cv} download>
+            <button className="hover">Resume</button>
+          </a>
+        )}
       </div>
     </section>
   );
