@@ -41,7 +41,7 @@ export const projectsData = [
   },
   {
     id: 5,
-    image: '/projects/shopnest.png',
+    image: '/projects/snapgram.png',
     category: 'Full-stack',
     github: 'https://github.com/Nathaniel81/snapgram',
     website: 'https://snapgram-9eaz.onrender.com',
