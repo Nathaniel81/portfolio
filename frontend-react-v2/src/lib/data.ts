@@ -1,7 +1,7 @@
 export const projectsData = [
   {
     id: 1,
-    image: 'projects/easebnb.png',
+    image: 'projects/easebnb.webp',
     category: 'Full-stack',
     github: 'https://github.com/Nathaniel81/easebnb',
     website: 'https://easebnb.onrender.com',
@@ -11,7 +11,7 @@ export const projectsData = [
   },
   {
     id: 2,
-    image: '/projects/rabbit.png',
+    image: '/projects/rabbit.webp',
     category: 'Full-stack',
     github: 'https://github.com/Nathaniel81/rabbit',
     website: 'https://rabbit-23mo.onrender.com',
@@ -21,7 +21,7 @@ export const projectsData = [
   },
   {
     id: 3,
-    image: '/projects/blizzr.png',
+    image: '/projects/blizzr.webp',
     category: 'Full-stack',
     github: 'https://github.com/Nathaniel81/blizzr',
     website: 'https://blizzrshop.onrender.com',
@@ -31,7 +31,7 @@ export const projectsData = [
   },
   {
     id: 4,
-    image: '/projects/shopnest.png',
+    image: '/projects/shopnest.webp',
     category: 'Full-stack',
     github: 'https://github.com/Nathaniel81/shopnest',
     website: 'https://shopnest-eykw.onrender.com/',
@@ -41,7 +41,7 @@ export const projectsData = [
   },
   {
     id: 5,
-    image: '/projects/snapgram.png',
+    image: '/projects/snapgram.webp',
     category: 'Full-stack',
     github: 'https://github.com/Nathaniel81/snapgram',
     website: 'https://snapgram-9eaz.onrender.com',
