@@ -48,6 +48,16 @@ export const projectsData = [
     title: 'Snapgram',
     description:
       'An interactive social media application built with React, TypeScript, Tailwind CSS, Django, Django REST framework, and PostgreSQL.'
+  },
+  {
+    id: 6,
+    image: '/projects/chatapp.webp',
+    category: 'Full-stack',
+    github: 'https://github.com/Nathaniel81/chat_app',
+    website: 'https://chatfusion-89ed.onrender.com',
+    title: 'ChatFusion',
+    description:
+      'A Real-Time Chat Application that allows users to engage in real-time messaging. Built with React, TypeScript, Tailwind CSS, Shadcn/ui, Django, Django REST Framework, Django Channels, and PostgreSQL.'
   }
 ]
   
