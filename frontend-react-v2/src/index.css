@@ -64,6 +64,7 @@
     @apply bg-primary text-lighted leading-relaxed;
     -ms-overflow-style: none;
     scrollbar-width: thin;
+    scroll-behavior: smooth;
   }
   ::-webkit-scrollbar-thumb {
     background: #ccc;
