@@ -42,7 +42,11 @@ const Hero = () => {
               As a dedicated web developer, I create dynamic and user-friendly applications using a modern stack including React, Tailwind CSS, Django, and PostgreSQL. My expertise in TypeScript ensures robust and scalable solutions. Let's bring your vision to life with exceptional web experiences.
             </p>
             </motion.div>
-            <div className='mt-4 flex flex-col items-center justify-center xl:flex-row xl:justify-start xl:space-x-8'>
+            <a
+              href='https://res.cloudinary.com/dqm9mc5da/image/upload/fl_attachment/v1721564414/kwit7sofqelaeuyzslfu.pdf'
+              download
+              rel="noopener noreferrer"
+              className='mt-4 flex flex-col items-center justify-center xl:flex-row xl:justify-start xl:space-x-8'>
               <motion.div
                 className='flex gap-x-2'
                 initial={{ opacity: 0 }}
@@ -54,12 +58,7 @@ const Hero = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <a 
-                    href='https://res.cloudinary.com/dqm9mc5da/image/upload/fl_attachment/v1721564414/kwit7sofqelaeuyzslfu.pdf' className='text-sm'
-                    download
-                    rel="noopener noreferrer">
-                      Resume
-                  </a>
+                  <span className='text-sm'>Resume</span>
                   <Download className='size-5' />
                 </motion.div>
               </motion.div>
@@ -71,7 +70,7 @@ const Hero = () => {
               >
                 <Social />
               </motion.div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
